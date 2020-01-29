@@ -9,28 +9,28 @@ var tableData = data;
 var tbody = d3.select("tbody");
 
 
-// // console.log the data from data.js
-// console.log(tableData);
+// console.log the data from data.js
+console.log(tableData);
 
-// // Step 1: Loop Through `tabledata` and log each  report object
-// data.forEach(x => {
-//     console.log(x);
+// Step 1: Loop Through `tabledata` and log each  report object
+data.forEach(x => {
+    console.log(x);
 
-//     // Step 2:  Use d3 to append one table row `tr` for each  report object
-//     var row = tbody.append("tr");
+    // Step 2:  Use d3 to append one table row `tr` for each  report object
+    var row = tbody.append("tr");
 
-//     // Step 3:  Use `Object.entries` to log each  report value
-//     Object.entries(x).forEach(([key, value]) => {
-//     console.log(key, value);
+    // Step 3:  Use `Object.entries` to log each  report value
+    Object.entries(x).forEach(([key, value]) => {
+    console.log(key, value);
 
-//     // Step 4: Use d3 to append 1 cell per weather report value (weekday, date, high, low)
-//     var cell = row.append("td");
+    // Step 4: Use d3 to append 1 cell per weather report value (weekday, date, high, low)
+    var cell = row.append("td");
 
-//     // Step 5: Use d3 to update each cell's text with
-//     //  report values 
-//     cell.text(value);
-//     });
-// });
+    // Step 5: Use d3 to update each cell's text with
+    //  report values 
+    cell.text(value);
+    });
+});
 
 
 
@@ -38,6 +38,9 @@ var tbody = d3.select("tbody");
 var button = d3.select("#filter-btn");
 
 button.on("click",function(){
+
+    //refresh the web page everytime when you click the button
+    tbody.html("  ");
 
     // Select the input element and get the raw HTML node
   var inputElement = d3.select("#datetime");
